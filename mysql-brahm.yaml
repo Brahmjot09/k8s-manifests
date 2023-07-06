@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-brahm
+  namespace: sqldb
+spec:
+  containers:
+  - name: mysql-brahm
+    image: 992332505002.dkr.ecr.us-east-1.amazonaws.com/brahm-repo-mysql:mysql-202307060227
+    ports:
+    - containerPort: 3306
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: db_pass123
+  imagePullSecrets:
+      - name: regcred    

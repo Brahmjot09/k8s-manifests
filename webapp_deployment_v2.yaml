@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-brahm-deployment
+  namespace: app-employees
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: employees
+        version: v2
+    spec:
+      containers:
+      - name: webapp-brahm-deployment
+        image: 992332505002.dkr.ecr.us-east-1.amazonaws.com/brahm-repo-app:application-202307060227
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DBHOST
+          value: service/mysql-brahm-service.sqldb.cluster.local
+        - name: DBPORT
+          value: "3306"
+        - name: DBPWD
+          value: db_pass123
+        command: ["python3", "app.py"]
+      imagePullSecrets:
+        - name: regcred    

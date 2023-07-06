@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-brahm-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: employees
+        version: v1
+    spec:
+      containers:
+      - name: webapp-brahm-deployment
+        image: 992332505002.dkr.ecr.us-east-1.amazonaws.com/brahm-repo-app:application-202307060227
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DBHOST
+          value: 10.244.0.12
+        - name: DBPORT
+          value: "3306"
+        - name: DBPWD
+          value: db_pass123
+        command: ["python3", "app.py"]
