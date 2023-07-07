@@ -17,12 +17,12 @@ spec:
     spec:
       containers:
       - name: webapp-brahm-deployment
-        image: 992332505002.dkr.ecr.us-east-1.amazonaws.com/brahm-repo-app:application-202307060227
+        image: <image-URI/path>
         ports:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: service/mysql-brahm-service.sqldb.cluster.local
+          value: mysql-brahm-service.sqldb.svc.cluster.local
         - name: DBPORT
           value: "3306"
         - name: DBPWD

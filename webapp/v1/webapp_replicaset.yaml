@@ -19,12 +19,12 @@ spec:
     spec:
       containers:
       - name: webapp-brahm-replicaset
-        image: 992332505002.dkr.ecr.us-east-1.amazonaws.com/brahm-repo-app:application-202307060227
+        image: <image-URI/path>
         ports:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: 10.244.0.8
+          value: <Internal-IP of mysql pod>
         - name: DBPORT
           value: "3306"
         - name: DBPWD

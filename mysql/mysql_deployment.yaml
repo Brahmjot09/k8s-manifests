@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mysql-brahm-deployment
-        image: 992332505002.dkr.ecr.us-east-1.amazonaws.com/brahm-repo-mysql:mysql-202307060227
+        image: 992332505002.dkr.ecr.us-east-1.amazonaws.com/brahm-repo-mysql:mysql-202307070345
         ports:
         - containerPort: 3306
         env:
