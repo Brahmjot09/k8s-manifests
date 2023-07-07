@@ -1,6 +1,24 @@
-# Welcome to Kubernetes Project
+# Welcome to Kubernetes Project :desktop_computer:
 
-## Here we will deploy a 2-tier application using Kubernetes.
-## Our app will consist of a MySQL database and 1 front-end webpage.
+### Here we will deploy a 2-tier application using Kubernetes. :exclamation:
 
-### All the manifests used in this project can be found here and the following will be the steps to deploy this app.
+ *Our app will consist of a MySQL database and 1 front-end webpage.*
+
+> ***SoMe UsEfuL coMManDs:***
+
+```
+ kubectl create ns <namespace>
+
+ kubectl apply -f path/to/manifest-file.yaml -n <namespace>
+ 
+ kubectl get all -n <namespace>
+ 
+ kubectl describe <resource-name> -n <namespace>
+ 
+ kubectl delete <resource-name> -n <namespace>
+
+```
+
+> ***Output***
+
+![Web-page](./Webapp-page.png)
